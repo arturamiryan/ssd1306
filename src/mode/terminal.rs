@@ -624,7 +624,8 @@ where
     SIZE: TerminalDisplaySize,
 {
     fn write_str(&mut self, s: &str) -> Result<(), fmt::Error> {
-        s.chars().map(move |c| self.print_char(c)).next_back();
-        Ok(())
+        s.chars()
+            .try_for_each(|c| self.print_char(c))
+            .map_err(|_| fmt::Error)
     }
 }

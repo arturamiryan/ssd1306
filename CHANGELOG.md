@@ -6,6 +6,9 @@ SSD1306 monochrome OLED display.
 <!-- next-header -->
 
 ## [Unreleased] - ReleaseDate
+### Fixed
+- Fix TerminalMode::write_str() to write all chars ([#228](https://github.com/rust-embedded-community/ssd1306/issues/228))
+
 ## [0.10.0] - 2025-03-22
 ### Changed
 - Added `DisplaySize64x32` to the prelude
